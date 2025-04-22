@@ -1,0 +1,6 @@
+# dune init project regex_engine
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/aadi/.cache/dune/db
+# Workspace root: "/home/aadi/Documents/My Data/regex_engine"
+# Auto-detected concurrency: 16
