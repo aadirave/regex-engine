@@ -17,9 +17,10 @@
 
 (package
  (name regex_engine)
+ (allow_empty)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune)
+ (depends ocaml dune ocamlfind ocamllex menhir)
  (tags
   (topics "to describe" your project)))
 
