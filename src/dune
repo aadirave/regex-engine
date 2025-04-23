@@ -1,0 +1,4 @@
+(library
+ (name main)
+ (modules main)
+ (libraries base stdio regex_engine))

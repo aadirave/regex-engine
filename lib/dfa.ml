@@ -1,4 +1,3 @@
-open Ast
 open Nfa
 
 module StateSet = Set.Make(Int)
@@ -49,7 +48,7 @@ let move (nfa' : nfa) (states : StateSet.t) (c : char) : StateSet.t =
       | None -> acc ) states StateSet.empty
 
 (* Build the dfa states and transitions *)
-let rec nfa_to_dfa (nfa' : nfa) : dfa =
+let nfa_to_dfa (nfa' : nfa) : dfa =
   let alphabet = get_alphabet nfa' in
 
   let module NfaStateSetMap = Map.Make(StateSet) in
