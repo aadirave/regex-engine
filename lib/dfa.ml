@@ -78,7 +78,7 @@ let rec nfa_to_dfa (nfa' : nfa) : dfa =
 
   while not (Queue.is_empty worklist) do
     let current_nfa_set = Queue.take worklist in
-    let current_dfa_id = NfaStateSetMap.find current_nfa_set !discovered_states in (* Should always exist *)
+    let current_dfa_id = NfaStateSetMap.find current_nfa_set !discovered_states in
 
     if not (StateSet.is_empty (StateSet.inter (StateSet.singleton nfa'.accepting_state) current_nfa_set)) then
       dfa_accept_states := StateSet.add current_dfa_id !dfa_accept_states;
