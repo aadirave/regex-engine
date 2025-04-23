@@ -1,6 +1,7 @@
 open Regex_engine.Dfa
 open Regex_engine.Nfa
 open Stdio
+open Sys
 
 let explode_string (s : string) : char list =
         List.init (String.length s) (String.get s)
@@ -21,8 +22,8 @@ let match_dfa (dfa' : dfa) (input_str : string) : bool =
         !success && StateSet.mem !current_state dfa'.accept_states
 
 let () = 
-        let pattern = "ab" in
-        let text = "ab" in
+        let pattern = argv.(1) in
+        let text = argv.(2) in
 
         printf "Pattern %s \n" pattern;
         printf "Text %s \n" text;
@@ -34,7 +35,7 @@ let () =
         let dfa' = nfa_to_dfa nfa' in
         let is_match = match_dfa dfa' text in
 
-        if is_match then printf "Matched" else printf "Unmatched"
+        if is_match then printf "Matched\n" else printf "Unmatched\n"
 
         with
                 | Failure msg -> eprintf "\n\nRan into an error: %s\n" msg;
