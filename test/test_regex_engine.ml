@@ -21,8 +21,8 @@ let match_dfa (dfa' : dfa) (input_str : string) : bool =
         !success && StateSet.mem !current_state dfa'.accept_states
 
 let () = 
-        let pattern = "a(b|d)" in
-        let text = "ad" in
+        let pattern = "a*b" in
+        let text = "aaab" in
 
         printf "Pattern %s \n" pattern;
         printf "Text %s \n" text;
